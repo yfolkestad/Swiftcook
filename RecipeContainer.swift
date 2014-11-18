@@ -11,24 +11,25 @@ import Foundation
 class RecipeContainer{
     
     //container for the recipes
-    var cookBook: [String: Recipe]
+    var cookBook: [Recipe]
     
     init(){
-        cookBook = [String: Recipe]()
+        cookBook = [Recipe]()
     }
     
     //get recipes
-    func getRecipeBook() -> Dictionary<String, Recipe>{
+    func getRecipeBook() -> [Recipe]{
         return cookBook
     }
     
     //add a recipe to the cookBook
-    func addRecipe(key: String, recipe: Recipe){
-        cookBook.updateValue(recipe, forKey: key)
+    func addRecipe(recipe: Recipe){
+        cookBook.append(recipe)
     }
     
     //remove a recipe from the cookBook
-//    func removeRecipe(key: String){
-//        cookBook.removeValueForKey(<#key: String#>)
-//    }
+    func removeRecipe(index: Int){
+        cookBook.removeAtIndex(index)
+    }
+    
 }
